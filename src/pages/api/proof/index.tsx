@@ -20,8 +20,8 @@ const handleMembershipProof = async (
 
   try {
     const zkFiles = {
-      wasmFilePath: path.join(dirname__+"/static/semaphore.wasm"),
-      zkeyFilePath: path.join(dirname__+"/static/semaphore_final.zkey")
+      wasmFilePath: path.join(__dirname+"/static/semaphore.wasm"),
+      zkeyFilePath: path.join(__dirname+"/static/semaphore_final.zkey")
     }
 
     const identity = new ZkIdentity(Strategy.MESSAGE, message)
