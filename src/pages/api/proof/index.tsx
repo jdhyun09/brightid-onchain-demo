@@ -34,7 +34,7 @@ const handleMembershipProof = async (
 
     res.status(200).json({ publicSignals, solidityProof })
   } catch (e) {
-    res.status(401).send({ error: "failed: " + e })
+    res.status(401).send({ error: e + __dirname})
   }
 }
 
