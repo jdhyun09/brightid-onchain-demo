@@ -18,7 +18,7 @@ const handleMembershipProof = async (
 
   try {
     const zkFiles = {
-      wasmFilePath: path.join("/var/task/.next/server/semaphore.wasm"),
+      wasmFilePath: path.join("/var/task/.next/server/public/semaphore.wasm"),
       zkeyFilePath: path.join("/var/task/.next/server/public/semaphore_final.zkey")
     }
 
