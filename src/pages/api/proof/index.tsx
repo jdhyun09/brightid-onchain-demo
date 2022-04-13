@@ -18,8 +18,8 @@ const handleMembershipProof = async (
 
   try {
     const zkFiles = {
-      wasmFilePath: path.join("/var/task/.next/server/public/semaphore.wasm"),
-      zkeyFilePath: path.join("/var/task/.next/server/public/semaphore_final.zkey")
+      wasmFilePath: path.join("/var/task/.next/public/semaphore.wasm"),
+      zkeyFilePath: path.join("/var/task/.next/public/semaphore_final.zkey")
     }
 
     const identity = new ZkIdentity(Strategy.MESSAGE, message)
@@ -34,7 +34,7 @@ const handleMembershipProof = async (
 
     res.status(200).json({ publicSignals, solidityProof })
   } catch (e) {
-    res.status(401).send({ error: e + path.join(__dirname+"/")})
+    res.status(401).send({ error: e + "1212"})
   }
 }
 
