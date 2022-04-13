@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import createProof from "@interep/proof"
 import { ZkIdentity, Strategy } from "@zk-kit/identity"
-import path from "path"
 
 interface Query {
   message: string
@@ -19,8 +18,8 @@ const handleMembershipProof = async (
 
   try {
     const zkFiles = {
-      wasmFilePath: path.join("./static/semaphore.wasm"),
-      zkeyFilePath: path.join("./static/semaphore_final.zkey")
+      wasmFilePath: "./static/semaphore.wasm",
+      zkeyFilePath: "./static/semaphore_final.zkey"
     }
 
     const identity = new ZkIdentity(Strategy.MESSAGE, message)
