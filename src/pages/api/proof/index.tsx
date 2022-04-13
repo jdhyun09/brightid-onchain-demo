@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import createProof from "@interep/proof"
 import { ZkIdentity, Strategy } from "@zk-kit/identity"
-
+import path from "path"
 interface Query {
   message: string
   groupId: string
@@ -18,8 +18,8 @@ const handleMembershipProof = async (
 
   try {
     const zkFiles = {
-      wasmFilePath: "../static/semaphore.wasm",
-      zkeyFilePath: "../static/semaphore_final.zkey"
+      wasmFilePath: path.join(__dirname+".."+".."+"/public/semaphore.wasm"),
+      zkeyFilePath: path.join(__dirname+".."+".."+"/semaphore_final.zkey")
     }
 
     const identity = new ZkIdentity(Strategy.MESSAGE, message)
@@ -34,7 +34,7 @@ const handleMembershipProof = async (
 
     res.status(200).json({ publicSignals, solidityProof })
   } catch (e) {
-    res.status(401).send({ error: e + __dirname})
+    res.status(401).send({ error: e + path.join(__dirname+".."+".."+"/")})
   }
 }
 
