@@ -20,7 +20,7 @@ const handleMembershipProof = async (
 
   try {
     const zkFiles = {
-      wasmFilePath: path.join(__dirname+"/favicon.ico"),
+      wasmFilePath: path.join("/favicon.ico"),
       zkeyFilePath: path.join("/favicon.ico")
     }
 
