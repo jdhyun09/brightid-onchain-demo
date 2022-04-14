@@ -16,10 +16,12 @@ const handleMembershipProof = async (
   const { message, groupId, signal, externalNullifier } =
     req.query as unknown as Query
 
+  let wasmFile = "http://localhost:8000/semaphore.wasm"
+  let zkeyFile = "http://localhost:8000/semaphore_final.zkey"
   try {
     const zkFiles = {
-      wasmFilePath: "./semaphore.wasm",
-      zkeyFilePath: "./semaphore_final.zkey"
+      wasmFilePath: wasmFile,
+      zkeyFilePath: zkeyFile
     }
 
     const identity = new ZkIdentity(Strategy.MESSAGE, message)
