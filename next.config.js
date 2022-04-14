@@ -7,9 +7,9 @@ const nextConfig = {
     infuraApiKey: process.env.INFURA_API_KEY,
     brightIdApiKey: process.env.BRIGHTID_API_PRIVATE_KEY,
   },
-  //serverRuntimeConfig: {
-    //PROJECT_ROOT: __dirname
-  //}
+  serverRuntimeConfig: {
+    PROJECT_ROOT: __dirname
+  }
 }
 
 module.exports = nextConfig
