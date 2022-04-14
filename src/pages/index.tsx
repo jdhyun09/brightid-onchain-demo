@@ -7,7 +7,6 @@ import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import logo from "../img/logo.png"
 import useOnChainGroups from "src/hooks/useOnChainGroups"
-import * as fastFile from "fastfile"
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
@@ -60,7 +59,6 @@ const Home: NextPage = () => {
   const [member, setMember] = useState<number>()
   useEffect(() => {
     ;(async () => {
-      const fdWasm = await fastFile.readExisting("/semaphore.wasm");
       const members = await memberCount()
       if (members) {
         setMember(members)
