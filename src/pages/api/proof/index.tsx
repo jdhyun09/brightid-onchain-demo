@@ -16,8 +16,8 @@ const handleMembershipProof = async (
   const { message, groupId, signal, externalNullifier } =
     req.query as unknown as Query
 
-  let wasmFile = "http://localhost:8000/semaphore.wasm"
-  let zkeyFile = "http://localhost:8000/semaphore_final.zkey"
+  let wasmFile = "/api/file/semaphore.wasm"
+  let zkeyFile = "/api/file/semaphore_final.zkey"
   try {
     const zkFiles = {
       wasmFilePath: wasmFile,
@@ -36,7 +36,7 @@ const handleMembershipProof = async (
 
     res.status(200).json({ publicSignals, solidityProof })
   } catch (e) {
-    res.status(401).send({ error: e + "1212"})
+    res.status(401).send({ error: e + "hi"})
   }
 }
 
